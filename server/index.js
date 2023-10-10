@@ -2,10 +2,14 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const pool = require("./db");
+const { corsOptions } = require("./config/corsOptions");
+const credentials = require("./middleware/credentials");
 
 // middleware
-
-app.use(cors());
+app.use(credentials);
+// app.use(cors(corsOptions));
+console.log(corsOptions.origin);
+app.use(cors(corsOptions));
 app.use(express.json()); // for req.body
 
 // ROUTES

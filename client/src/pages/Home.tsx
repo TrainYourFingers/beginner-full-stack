@@ -139,7 +139,7 @@ function Home() {
             </tr>
           </thead>
           <tbody className="h-full text-lg">
-            {todo.map((item: any) => (
+            {todo?.map((item: any) => (
               <tr key={item.todo_id} className="border-b">
                 <td className="text-center py-2">
                   <input
