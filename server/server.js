@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const pool = require("./db");
+const pool = require("./model/db");
 const { corsOptions } = require("./config/corsOptions");
 const credentials = require("./middleware/credentials");
 
