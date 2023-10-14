@@ -4,7 +4,9 @@ const cors = require("cors");
 const pool = require("./model/db");
 const { corsOptions } = require("./config/corsOptions");
 const credentials = require("./middleware/credentials");
+const dotenv = require("dotenv")
 
+dotenv.config();
 // middleware
 app.use(credentials);
 // app.use(cors(corsOptions));
@@ -94,6 +96,6 @@ app.delete("/todos/:id", async (req, res) => {
   }
 });
 
-app.listen(5000, () => {
-  console.log("Server has started on port 5000");
+app.listen(process.env.PORTFORSERVER, () => {
+  console.log(`Server has started on port ${process.env.PORTFORSERVER}`);
 });
